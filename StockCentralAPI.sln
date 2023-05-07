@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockCentralAPI", "StockCentralAPI\StockCentralAPI.csproj", "{B725E589-9B7C-45DB-9B04-5321318A12E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockCentralAPI", "StockCentralAPI\StockCentralAPI.csproj", "{B725E589-9B7C-45DB-9B04-5321318A12E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockCentral.Domain", "StockCentral.Domain\StockCentral.Domain.csproj", "{2212C3BE-CADC-4841-B48A-BBAC07DAB804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockCentral.Infrastructure", "StockCentral.Infrastructure\StockCentral.Infrastructure.csproj", "{6512AFA5-F1C0-4DC3-868D-CF1822DFC800}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{B725E589-9B7C-45DB-9B04-5321318A12E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B725E589-9B7C-45DB-9B04-5321318A12E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B725E589-9B7C-45DB-9B04-5321318A12E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2212C3BE-CADC-4841-B48A-BBAC07DAB804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2212C3BE-CADC-4841-B48A-BBAC07DAB804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2212C3BE-CADC-4841-B48A-BBAC07DAB804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2212C3BE-CADC-4841-B48A-BBAC07DAB804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6512AFA5-F1C0-4DC3-868D-CF1822DFC800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6512AFA5-F1C0-4DC3-868D-CF1822DFC800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6512AFA5-F1C0-4DC3-868D-CF1822DFC800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6512AFA5-F1C0-4DC3-868D-CF1822DFC800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

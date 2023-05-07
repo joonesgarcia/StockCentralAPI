@@ -1,8 +1,6 @@
-﻿using StockCentralAPI.Models.InputModel;
-using StockCentralAPI.Models.ViewModel;
-using StockCentralAPI.Models;
+﻿using StockCentral.Domain.Models;
+using StockCentral.Domain.Models.InputModel;
 using System.Net;
-using Microsoft.AspNetCore.Mvc;
 
 namespace StockCentralAPI.Endpoints
 {
@@ -10,42 +8,34 @@ namespace StockCentralAPI.Endpoints
     {
         public static void MapStock(this WebApplication app)
         {
-            app.MapGet("/Products", (AppDbContext context) =>
+            app.MapGet("/Products", () =>
             {
                 return context.Stock;
             });
-            app.MapGet("/Products/Smartphones", (AppDbContext context) =>
+            app.MapGet("/Products/Smartphones/GetAll", () =>
             {
-                return context.Smartphones.Select(s => new SmartphoneViewModel(s.Name, s.Memory, s.Acessories, s.Status.ToString(), s.CostPrice, s.SoldPrice)).ToList();
             });
-            app.MapPost("/Products/Add/Smartphone", (AppDbContext context, SmartphoneInputModel model) =>
+            app.MapGet("/Product/Smartphones/GetById", () =>
             {
-                context.Stock.Add(new Smartphone(model));
-                context.SaveChanges();
-                return HttpStatusCode.Created;
-            });
-            app.MapPut("/Products/Update/Smartphone", (AppDbContext context, Guid id, SmartphoneUpdateModel model) =>
-            {
-                var smartphone = context.Smartphones.SingleOrDefault(s => s.Id == id);
 
                 if (smartphone == null)
                     return HttpStatusCode.NotFound;
-                else
-                    smartphone.UpdateSmartphone(model);
-
-                context.SaveChanges();
-                return HttpStatusCode.NoContent;
-
             });
-            app.MapDelete("/Products/Delete/Smartphone", (AppDbContext context, Guid id, [FromBody] SmartphoneUpdateModel model) =>
+            app.MapPost("/Products/Smartphones/Add", (SmartphoneInputModel model) =>
             {
-                var smartphone = context.Smartphones.SingleOrDefault(s => s.Id == id);
-                if (smartphone == null)
-                    return HttpStatusCode.NotFound;
-                else
-                    context.Smartphones.Remove(smartphone);
-                context.SaveChanges();
-                return HttpStatusCode.OK;
+
             });
+            app.MapPut("/Products/Smartphones/Update", (SmartphoneUpdateModel model) =>
+            {
+
+
+            });
+            app.MapDelete("/Products/Smartphones/Delete", (Guid id) =>
+            {
+
+            });
+
+
         }
-}}
+    }
+}
